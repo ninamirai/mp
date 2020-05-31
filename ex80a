@@ -1,0 +1,52 @@
+program ex80a_52z;
+  var n,s,p,i:integer;
+  var a:array[1..100] of integer;
+begin
+  writeln('введите n: ');
+  readln(n);
+  writeln('введите числа: ');
+  //
+  i:=1;
+  repeat 
+    read(a[i]);
+    Inc(i);
+  until i>n;
+  //
+  s:=0;
+  for i:=1 to n do
+         begin
+           
+           p:=ABS(a[i]);
+           s:=s+p;
+         end;
+  writeln('for : ', s);
+  
+  for i:=n to 1 do 
+    begin
+      p:=ABS(a[i]);
+      s:=s+p;
+    end;
+  writeln('обратный for: ', s);
+  
+  i:=1;
+  s:=0;
+  while i<=n do
+    begin
+      p:=ABS(a[i]);
+      s:=s+p;
+      Inc(i);
+    end;
+  writeln('while : ', s);
+  
+  i:=1;
+  s:=0;
+  repeat
+    p:=ABS(a[i]);
+    s:=s+p;
+    Inc(i);
+  until i>n;
+  writeln('repeat : ', s);
+  
+  
+end.
+  
